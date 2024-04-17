@@ -15,9 +15,12 @@ world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
 # Merge the world map dataframe with the filtered data
 merged_data = world.merge(filtered_data, how='left', left_on='iso_a3', right_on='Country Code')
 
+# Create list of column names for dropdown menu
+years = ([str(year) for year in range(1960, 2023)])
+
 # Create a dropdown menu for selecting the column to plot
-column_dropdown = alt.binding_select(options=[str(year) for year in range(1960, 2023)])
-column_select = alt.selection_single(fields=['column'], bind=column_dropdown, name='Select')
+column_selector = alt.binding_select(options=years)
+column_dropdown = alt.selection_point(fields=['key'], bind=column_selector, name='Select')
 
 # Create an Altair chart
 chart = alt.Chart(merged_data).mark_geoshape(
@@ -25,24 +28,22 @@ chart = alt.Chart(merged_data).mark_geoshape(
     strokeWidth=0.5
 ).encode(
     color=alt.condition(
-        column_select,
-        alt.Color('data:Q', scale=alt.Scale(scheme='orangered'), title='Number of Deaths'),
+        column_dropdown,
+        alt.Color('data:Q', scale=alt.Scale(scheme='orangered'), title='Compulsory education, duration (years)'),
         alt.value('lightgray')  # Default color when no column is selected
     ),
     tooltip=['name:N', alt.Tooltip('data:Q', format='.0f')]  # Show the selected column's value
 ).properties(
     width=800,
     height=500,
-    title='Number of Deaths Ages 20-24 Years by Country'
+    title='Compulsory education, duration (years)'
 ).project(
     type='naturalEarth1'
-).add_selection(
-    column_select
-).transform_calculate(
-    data=alt.expr.if_(column_select, f'datum["{{column_select}}"]', alt.value(0))  # Correctly handle no selection
+).add_params(
+    column_dropdown
 ).transform_filter(
-    column_select
+    column_dropdown
 ).interactive()
 
 # Save the Altair chart as an HTML file
-chart.save('interactive_map_with_dropdown.html')
+chart.save('Wraven_interactive.html')
