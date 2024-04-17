@@ -29,8 +29,8 @@ chart = alt.Chart(merged_data).mark_geoshape(
 ).encode(
     color=alt.condition(
         column_dropdown,
-        alt.Color('data:Q', scale=alt.Scale(scheme='orangered'), title='Compulsory education, duration (years)'),
-        alt.value('lightgray')  # Default color when no column is selected
+        alt.Color(f'{column_dropdown.key}:Q', scale=alt.Scale(scheme='orangered'), title='Compulsory education, duration (years)'),
+        #alt.value('lightgray')  # Default color when no column is selected
     ),
     tooltip=['name:N', alt.Tooltip('data:Q', format='.0f')]  # Show the selected column's value
 ).properties(
