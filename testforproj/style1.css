@@ -6,7 +6,7 @@ body {
     padding: 0 20px 20px 20px;
     border: 3px solid black;
     font-family: 'Optima', sans-serif;
-  }
+}
 
 h1 {
     margin: 0;
@@ -14,13 +14,16 @@ h1 {
     color: black;
     text-align: center;
     text-decoration: underline;
-  }
+}
+
 h2 {
     margin: 0;
     text-align: center;
 }
 
-h3{text-decoration: underline;}
+h3 {
+    text-decoration: underline;
+}
 
 .tg {
     border-collapse: collapse;
@@ -63,20 +66,25 @@ h3{text-decoration: underline;}
 
 .container {
     align-items: center;
-    display: flex;/* Align items vertically in center */
+    display: flex;
+    /* Align items vertically in center */
 }
 
 .image {
-    flex: 0 0 65%; /* Don't allow the image to grow or shrink */
-    margin-right: 10px; /* Add some space between image and text */
+    flex: 0 0 65%;
+    /* Don't allow the image to grow or shrink */
+    margin-right: 10px;
+    /* Add some space between image and text */
 }
+
 .image1 {
-    flex: 0 0 100%; /* Don't allow the image to grow or shrink */
-    margin-right: 10px; /* Add some space between image and text */
+    flex: 0 0 100%;
+    /* Don't allow the image to grow or shrink */
+    margin-right: 10px;
+    /* Add some space between image and text */
 }
+
 .text {
-    flex: 1; /* Allow text to grow to fill remaining space */
+    flex: 1;
+    /* Allow text to grow to fill remaining space */
 }
-
-
-
