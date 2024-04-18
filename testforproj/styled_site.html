@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global School Enrollment</title>
+    <link href="style1.css" rel="stylesheet" />
+    <style>
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
+        url('map_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+h1, h2, h3 {
+    color: #042354; /* Blue heading color */
+}
+
+a {
+    color: #007BFF; /* Blue link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+</style>
+    
+</head>
+
+<body>
+
+    <h1> Global School Enrollment and Its Impacts on Socioeconomic Factors</h1>
+    <h2>Sahana Dhar, Madelyn Redick, Sophia Watanabe, Jamie Koo</h2>
+
+    <h3>Introduction</h3>
+
+    <p>Global school enrollment is a critical indicator of educational access and quality
+        worldwide, impacting individual and societal development in numerous ways. Higher enrollment rates are often
+        associated
+        with a more educated workforce, which can drive innovation, enhance productivity, and
+        contribute to economic growth. Additionally, analyzing global school enrollment data can provide insights
+        into future economic prospects for different countries and regions. In another aspect, education is linked
+        to a wide range of societal and health benefits, including mortality rates. Exploring the impacts
+        of school enrollment can highlight the importance of education in achieving broader societal
+        goals. Also, data on global school enrollment can inform policymakers, international
+        organizations, and investors about areas where educational infrastructure and support are most
+        needed. This can help direct resources more effectively, ensuring that investments in education
+        yield the greatest societal and economic returns.</p>
+
+    <p>Our dataset on global education is sourced from The World Bank, and specifically
+        focuses on school enrollment. The dataset is a comprehensive collection of data that spans
+        multiple countries and covers various years. With 43,629 rows and 67 columns of data, this
+        dataset offers an in-depth look at educational indicators, including enrollment rates across
+        different education levels (primary, secondary, and tertiary) and other relevant metrics such as
+        progression to secondary education by gender. This dataset enables a wide range of analyses
+        from trend analysis and comparative studies across regions or countries to evaluate the impact of
+        educational policies. Furthermore, it allows for exploring the connection between education and
+        socioeconomic factors like economic growth, health outcomes, and gender equality.</p>
+
+    <p>LINK TO DATASET -> <a href="https://data.worldbank.org/topic/education?view=chart">Global School Enrollment
+            Dataset</a> sourced from the reputable
+        <a href="https://uis.unesco.org/bdds">Institute for Statistics</a>.
+    </p>
+
+    <h3>DATASET</h3>
+
+    <p> DATASET DESCRIPTION:</p>
+
+    <div class="center">
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th class="tg-0lax"><strong>Indicator Name</strong></th>
+                    <th class="tg-0lax"><strong>Indicator Description</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-0lax">Country</td>
+                    <td class="tg-0lax">Country or Region Name</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">School enrollment, secondary (% gross)</td>
+                    <td class="tg-0lax">Gross enrollment ratio is the ratio of total enrollment, regardless of age, to
+                        the population of the age group that officially corresponds to the level of education shown.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">Government expenditure on education, total (% of GDP)</td>
+                    <td class="tg-0lax">General government expenditure on education (current, capital, and transfers) is
+                        expressed as a percentage of GDP.</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">Number of deaths ages 20-24 years</td>
+                    <td class="tg-0lax">Number of deaths of youths ages 20-24 years</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">Compulsory education, duration (years)</td>
+                    <td class="tg-0lax">Duration of compulsory education is the number of years that children are
+                        legally obliged to attend school.</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">Unemployment, total (% of total labor force) (modeled ILO estimate)</td>
+                    <td class="tg-0lax">Unemployment refers to the share of the labor force that is without work but
+                        available for and seeking employment.</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">Literacy rate, adult total (% of people ages 15 and above)</td>
+                    <td class="tg-0lax">Adult literacy rate is the percentage of people ages 15 and above who can both
+                        read and write with understanding a short simple statement about their everyday life.</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">Literacy rate, youth total (% of people ages 15-24)</td>
+                    <td class="tg-0lax">Youth literacy rate is the percentage of people ages 15-24 who can both read and
+                        write with understanding a short simple statement about their everyday life.</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">Educational attainment, at least completed lower secondary, population 25+,
+                        total (%) (cumulative)</td>
+                    <td class="tg-0lax">The percentage of population ages 25 and over that attained or completed lower
+                        secondary education.</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">Adolescents out of school (% of lower secondary school age)</td>
+                    <td class="tg-0lax">Adolescents out of school are the percentage of lower secondary school age
+                        adolescents who are not enrolled in school.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Static Plots</h3>
+
+    <div class='container'>
+        <div class='image'>
+            <img src="Government_Expenditure.png" width="700px" height="200px" frameborder="0">
+        </div>
+        <div class='text'>
+            <p> Africa, Asia, and North America have similar ranges, but African and Asian countries tend to spend about
+                2%-4% of their GDP on education while North American countries more frequently dedicate 3%-6%. Europe,
+                Oceania, and South America also have similar ranges, with their countries each typically spending 4%-6%
+                of their GDP on education funding. Analyzing government funding of education is important in
+                understanding its effects on a society because it impacts the quality, duration, and accessibility of
+                education systems. </p>
+        </div>
+    </div>
+
+    <div class='container'>
+        <div class='text'>
+            <p> Description for static plot 2</p>
+        </div>
+        <div class='image'>
+            <img src="test.png" width="80%" height="400px" frameborder="0">
+        </div>
+    </div>
+
+    <h3>Interactive Plots</h3>
+
+    <div class='container'>
+        <div class='image'>
+            <iframe src="Primary_School_Enrollment_vs_Education_Metrics.html" width="100%" height="550px"
+                frameborder="0"></iframe>
+        </div>
+        <div class='text'>
+            <p> This interactive scatterplot has primary school enrollment levels on the x axis and a
+                dynamic y axis with options to plot unemployment rates, literacy rates,
+                progression to secondary school, and more. It features an interactive legend that
+                shows only data from a selected continent. Hovering over a specific data point
+                shows the name of the country and the year in which the data was collected.
+                This plot is extremely helpful in understanding the dataset as a whole, since it
+                allows us to compare how global enrollment rates impacts other variables of interest.
+                For example, when ‘Progression to secondary school (%)’ is selected as the y axis variable,
+                there is a dense cluster of regions with high primary school enrollment rates and high levels
+                of progression from primary school to secondary school, while other portions of the data are
+                more widespread. This indicates that there is a strong correlation between the two variables,
+                that there is some type of relationship between them. However, the presence of outliers and
+                variations across regions suggests that there are factors other than primary school enrollment
+                involved in progression rates. </p>
+        </div>
+    </div>
+
+    <div class='container'>
+        <div class='text'>
+            <p> Description for interactive plot 2</p>
+        </div>
+        <div class='image'>
+            <iframe src="chart1.html" width="80%" height="400px" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <h3>Map</h3>
+
+    <div class='center'>
+        <div class='image'>
+            <iframe src="wraven_interactive_map.html" width="925px" height="600px" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class='left'>
+        <p>     Data on compulsory education duration becomes available starting from 1995, with North Korea being the sole country with 
+            available data for that year, mandating 11 years of compulsory education. By 1998, data becomes available for many countries. 
+            The maximum compulsory education duration observed across countries in any given year is 17 years (Venezuela in 2021), while the 
+            minimum is 5 years for several nations. Overall, while many countries were steadfast in the number of compulsory years, others 
+            increased the number of years of compulsory education. The best example of this is South America. Many countries in this region 
+            have increased the number of years over time from below 10 to over 10 over the course of two decades. In 2022 
+            (the most recent year with available data), it's evident that South America overall has the highest number of compulsory years of education. 
+            This contrasts with Africa, which varies more by country, but generally requires fewer years of compulsory education on average. 
+            Other regions, such as North America, tend to be more inconsistent.
+
+            It's important to remember that the years of compulsory education are not equivalent to actual school enrollment, nor do they equate 
+            to educational quality. Rather, this map seeks to provide a baseline understanding of the amount of education mandated by governments 
+            worldwide and to what degree this varies from country to country.
+        </p>
+    </div>
+    <h3>Analysis and Conclusion</h3>
+
+    <p>ANALYSIS</p>
+    <p>MORE EXPLANATION</p>
+    <p>FINAL WORDS</p>
+
+</body>
+
+</html>
