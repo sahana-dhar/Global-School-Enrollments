@@ -13,7 +13,7 @@ d3.csv('project_modified.csv').then(data => {
     const EnrollmentArray = averageEnrollmentArray.filter(d => d.Year !== 2023);
   
     const svgTrend = d3.select("#trendlineSVG"),
-            margin = { top: 20, right: 20, bottom: 50, left: 50 },
+            margin = { top: 20, right: 5, bottom: 50, left: 60 },
             width = +svgTrend.attr("width") - margin.left - margin.right,
             height = +svgTrend.attr("height") - margin.top - margin.bottom;
   
@@ -57,6 +57,14 @@ d3.csv('project_modified.csv').then(data => {
   
     g.append("g").call(d3.axisLeft(y));
 
+    g.append("text")
+        .attr("x", width / 2 - 20)
+        .attr("y", -10)
+        .attr("text-anchor", "middle")
+        .style("font-size", "11px")
+        .style("font-weight", "bold")
+        .text("Global Lower Secondary Educational Attainment Rate Over The Years");
+
     const xAxis = g.append("g")
         .attr("transform", `translate(0,${height})`)
         .call(d3.axisBottom(x));
@@ -68,7 +76,7 @@ d3.csv('project_modified.csv').then(data => {
         .attr("fill", "#000")
         .attr("transform", `translate(${width / 2}, ${margin.bottom -10})`) 
         .style("text-anchor", "middle")
-        .style("font-size", "15px")
+        .style("font-size", "12px")
         .text("Year");
 
     yAxis.append("text")
@@ -76,7 +84,7 @@ d3.csv('project_modified.csv').then(data => {
         .attr("transform", `rotate(-90) translate(${-height / 2},0)`)
         .attr("y", -margin.left + 20)
         .attr("text-anchor", "middle")
-        .style("font-size", "15px")
+        .style("font-size", "12px")
         .text("Average Educational Attainment Rate (%)");
   });
 
@@ -116,22 +124,30 @@ d3.csv('project_modified.csv').then(data => {
 
     gBoxplot.append("text")
         .attr("fill", "#000")
-        .attr("transform", `translate(${widthBoxplot / 2}, ${marginBoxplot.bottom + 310})`) 
+        .attr("transform", `translate(${widthBoxplot / 2}, ${marginBoxplot.bottom + 200})`) 
         .style("text-anchor", "middle")
-        .style("font-size", "15px")
+        .style("font-size", "12px")
         .text("Gender");
 
     gBoxplot.append("text")
         .attr("fill", "#000")
         .attr("transform", `rotate(-90) translate(${-heightBoxplot / 2},0)`)
-        .attr("y", -marginBoxplot.left + 20)
+        .attr("y", -marginBoxplot.left + 10)
         .attr("text-anchor", "middle")
-        .style("font-size", "15px")
+        .style("font-size", "12px")
         .text("Educational Attainment Rate (%)");
+
+    gBoxplot.append("text")
+        .attr("x", widthBoxplot / 2 - 20)
+        .attr("y", -10)
+        .attr("text-anchor", "middle")
+        .style("font-size", "11px")
+        .style("font-weight", "bold")
+        .text("Global Lower Secondary Educational Attainment Gender Distribution");
 });
 
 const svgBoxplot = d3.select("#boxplotSVG"),
-      marginBoxplot = { top: 20, right: 20, bottom: 50, left: 100 },
+      marginBoxplot = { top: 20, right: 5, bottom: 50, left: 40},
       widthBoxplot = +svgBoxplot.attr("width") - marginBoxplot.left - marginBoxplot.right,
       heightBoxplot = +svgBoxplot.attr("height") - marginBoxplot.top - marginBoxplot.bottom;
 
