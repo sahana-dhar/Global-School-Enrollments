@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global School Enrollment</title>
     <link href="style1.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        svg {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -128,12 +140,19 @@
 
     <div class='container'>
         <div class='text'>
-            <p> Description for static plot 2</p>
+            <h3>Global Average Lower Secondary Educational Attainment Rate Over The Years</h3>
         </div>
         <div class='image'>
-            <img src="test.png" width="80%" height="400px" frameborder="0">
+            <svg id="trendlineSVG" width="600" height="400"></svg>
         </div>
-    </div>
+        <div class='text'>
+            <h3>Global Lower Secondary Educational Attainment Gender Distribution</h3>
+        </div>
+        <div class='image'>
+            <svg id="boxplotSVG" width="600" height="400"></svg>
+        </div>
+        <script src="jamie_static_main.js"></script>
+    </div>    
 
     <h3>Interactive Plots</h3>
 
